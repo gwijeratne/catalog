@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+
+{% block content%}
+New Category Page<br><br>
+
+<div class="row">
+	<form action="#" method="post">
+		<div class="col-md-12">
+		Category : <input type ="text"  name="category"><br>
+		<input type="submit" value="Submit">
+		</div>	
+	</form>
+	<div class="col-md-12">
+			<a href="{{url_for('showCatalog')}}"> 
+		<input type="submit" value="Cancel">
+		</a>
+	</div>
+</div>
+{% endblock%}

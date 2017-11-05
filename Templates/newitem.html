@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+
+{% block content%}
+<h1>{{category.name}}</h1>
+<h2>New Item </h2>
+<form action="#" method="post">
+	<div class="row">
+		<div class="col-md-12">
+		Item Name : <input type ="text"  name="name"><br>
+		</div>
+	</div>	
+	<div class="row">
+		<div class="col-md-12">
+			<textarea name="description" rows="16" cols="75"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<input type="submit" value="Submit">
+		</div>
+	</div>		
+</form>
+<div class="row">	
+	<div class="col-md-12">
+		<a href="{{url_for('showCategory', category_id = category.id)}}"> 
+			<input type="submit" value="Cancel">
+		</a>
+	</div>
+</div>
+{% endblock%}
