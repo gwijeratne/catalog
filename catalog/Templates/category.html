@@ -1,0 +1,49 @@
+{% extends "base.html"%}
+
+{% block content%}
+
+<div class="row">
+	<div class="col-md-12 col-xs-12">
+		<h2> {{category.name}}</h2>
+	</div>
+</div>
+{% if user.id == category.user_id %}
+<div class="row">
+		<div class="col-md-12 col-xs-12  ">
+			<a href="{{url_for('editCategory', category_id = category.id)}}">
+				<button >
+					Edit
+				</button>
+			</a>
+			<a href="{{url_for('deleteCategory', category_id = category.id)}}">
+				<button >
+					Delete
+				</button>
+			</a>
+		</div>		
+</div>
+{% endif %}
+<div class="row">
+    <div class="col-md-12">       
+        <hr>
+    </div> 
+</div>
+{% for item in items %}
+	<div class="row">
+		<div class="col-md-12">
+		<a href="{{url_for('showItem', category_id = category.id, item_id = item.id)}}">
+			<h4>{{item.name}}</h4>
+		</a>
+		</div>
+	</div>
+{% endfor %}
+<div class="row">
+	<div class="col-md-12">
+		<a href="{{url_for('newItem', category_id = category.id)}}">
+				<button >
+					Add Item
+				</button>
+			</a>
+	</div>
+</div>
+{% endblock%}
