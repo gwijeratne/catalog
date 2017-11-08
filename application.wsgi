@@ -2,9 +2,9 @@
 import sys
 
 #Expand Python classes path with your app's path
-#sys.path.insert(0, "d:/webapps/test")
+sys.path.insert(0, "/var/www/catalog")
 
-from catalog import app
+from application import app
 
 #Put logging code (and imports) here ...
 
