@@ -28,7 +28,7 @@ session = DBSession()
 # Google connect code.
 
 CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r')
+    open('/var/www/catalog/client_secrets.json', 'r')
     .read())['web']['client_id']
 APPLICATION_NAME = "Catalog Application"
 
